@@ -1,0 +1,1 @@
+# printer of XP-58C on XPrinter , use example .   
