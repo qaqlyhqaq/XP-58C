@@ -1,0 +1,17 @@
+[package]
+name = "XP-58C"
+version = "0.1.0"
+edition = "2024"
+description = "xPrinter XP-58C dll use exmple ."
+
+
+
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+
+[dependencies]
+libloading = {version = "*"}
+anyhow  = {version = "*"}
