@@ -3,6 +3,8 @@ use libloading;
 use libloading::{Library, Symbol};
 use std::ffi::{c_char, c_int, c_short, c_uint, c_void};
 use std::thread::sleep;
+use encoding::all::GBK;
+use encoding::{EncoderTrap, Encoding};
 
 fn main() -> Result<()> {
     let lib: Library = unsafe {
@@ -65,8 +67,9 @@ fn main() -> Result<()> {
 
             println!("OpenPort_result:{}", OpenPort_result);
 
-            let text_buffer = "hello world !\0\0".to_string();
-            let PrintText_result = PrintText(printer_result, text_buffer.as_ptr() as *const c_char, 2, 8);
+            let text_buffer = "hello world 阿三大苏打!\0".to_string();
+            let gbk_data = GBK.encode(text_buffer.as_str(), EncoderTrap::Strict).unwrap();
+            let PrintText_result = PrintText(printer_result, gbk_data.as_ptr() as *const c_char, 2, 8);
 
             println!("PrintText_result:{}", PrintText_result);
 
