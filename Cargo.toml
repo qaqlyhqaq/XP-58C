@@ -4,15 +4,12 @@ version = "0.1.0"
 edition = "2024"
 description = "xPrinter XP-58C dll use exmple ."
 
-
-
-
 [[bin]]
 name = "main"
 path = "src/main.rs"
 
-
 [dependencies]
-libloading = {version = "*"}
-anyhow  = {version = "*"}
-encoding = {version = "*"}
+libloading = {version = "0.8"}
+anyhow  = {version = "1.0"}
+encoding = {version = "0.2"}
+log = {version = "0.4"}

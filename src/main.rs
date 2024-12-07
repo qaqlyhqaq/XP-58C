@@ -7,6 +7,7 @@ use std::ffi::{c_char, c_int, c_short, c_uint, c_void};
 
 fn main() -> Result<()> {
 
+
     let lib: Library = unsafe { Library::new("lib/printer.sdk.dll".to_string()).unwrap() };
 
     let InitPrinter = unsafe {
@@ -69,7 +70,7 @@ fn main() -> Result<()> {
             printer_result,
             gbk_data.as_ptr() as *const c_char,
             2,
-            text_buffer.len() as c_uint,
+            8,
         );
 
         println!("print_text_result:{}", print_text_result);
